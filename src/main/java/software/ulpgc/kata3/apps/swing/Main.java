@@ -1,4 +1,8 @@
-package software.ulpgc.kata3;
+package software.ulpgc.kata3.apps.swing;
+
+import software.ulpgc.kata3.MapHistogramDataFieldBuilder;
+import software.ulpgc.kata3.Title;
+import software.ulpgc.kata3.TsvTitleReader;
 
 import java.io.File;
 import java.util.Comparator;
@@ -13,11 +17,12 @@ public class Main {
         titles.sort(Comparator.comparingInt(Title::startYear));
         Map<String, Integer> yearStats = getYearStats(titles);
 
-        HorizontalHistogramTitleStatisticDisplayer histogram = new HorizontalHistogramTitleStatisticDisplayer(
+        JFreeVerticalHistogramTitleStatisticDisplayer histogram = new JFreeVerticalHistogramTitleStatisticDisplayer(
                 new MapHistogramDataFieldBuilder(yearStats),
                 "Year Statistics Histogram"
         );
-        histogram.display();
+        HistogramMainFrame mainFrame = new HistogramMainFrame(histogram);
+        mainFrame.display();
     }
 
     private static Map<String, Integer> getYearStats(List<Title> titles) {

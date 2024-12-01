@@ -1,4 +1,8 @@
-package software.ulpgc.kata3;
+package software.ulpgc.kata3.apps.console;
+
+import software.ulpgc.kata3.HistogramDataField;
+import software.ulpgc.kata3.HistogramDataFieldBuilder;
+import software.ulpgc.kata3.StatisticDisplayer;
 
 import java.util.List;
 
