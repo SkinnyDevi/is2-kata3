@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Main {
+public class ConsoleMain {
     public static void main(String[] args) {
         File file = new File("./title.basics.tsv");
         List<Title> titles = new TsvTitleReader(file).read();
